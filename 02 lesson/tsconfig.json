@@ -1,0 +1,12 @@
+// ctrl + space - gives snippet
+{
+    "compilerOptions": {
+        "target":"ES6",
+        "lib": ["es6", "dom", "es2017"],
+        "module": "commonjs", 
+        "sourceMap": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
