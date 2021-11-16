@@ -31,7 +31,7 @@ constructor - full
 
 ##### Class Program
 
-- Creates an array of 5 food objects with full data.
+- Create an array of 5 food objects with full data.
 - Send their data to the html file.
 
 #### index.html - HTML page
