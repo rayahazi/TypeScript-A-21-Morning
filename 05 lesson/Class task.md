@@ -29,7 +29,7 @@ methods -
 
 constructor - full
 
-##### Class Program
+##### File - Program
 
 - Create an array of 5 food objects with full data.
 - Send their data to the html file.
