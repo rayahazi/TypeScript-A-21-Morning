@@ -1,0 +1,16 @@
+// ctrl + space - gives snippet
+{
+    "compilerOptions": {
+        "target":"ES6",
+        "lib": ["es6", "dom", "es2017"],
+        // we must change the module to `amd`
+        "module": "commonjs", 
+        "sourceMap": true, 
+        // outFile - will redirect all the files to 1 js file:
+        "outDir": "./out"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
+// to run: tsc 
