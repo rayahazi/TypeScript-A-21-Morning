@@ -39,7 +39,7 @@
 
 Full Constructor
 
-#### 2. Create sub class `Mamal`, extends from `Animal`
+#### 2. Create sub class `Mammal`, extends from `Animal`
 
 **Properties:**
 
