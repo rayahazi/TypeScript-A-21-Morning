@@ -52,3 +52,39 @@
 
 ### 5 lesson
 * Composition - class tasks. 
+
+### 6 lesson
+* Class tasks solution
+* static keyword
+
+### 7 lesson
+* Inheritance 
+* constructor with inheritance - super()
+* Override
+
+### 8 lesson
+* Readonly
+* Multylevel
+* Overloading
+* Enum
+
+### 9 lesson
+* Abstract
+* Class tasks
+
+### 10 lesson
+* Interface
+* Multy - interface
+* Design pattern - Singleton
+
+### 11 lesson
+* Error handling
+* Try & catch
+* finally
+* throw
+* Error interface & sub classes: RangeError, TypeError etc..
+
+### 12 lesson
+* Dstructuring
+
+### 13 lesson
