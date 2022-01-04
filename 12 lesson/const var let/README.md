@@ -1,48 +1,55 @@
-## const var let
+# var const let
 
-- var was the only value for any value in JS, until ES6.
-- const and let were added in the last version of JS - ES6.
+- var - was the only type for any value until ES6 version of JavaScript.
+- const and let were added in the last version - ES6.
+
+<table border=1>
+    <tr>
+        <th></th>
+        <th>var</th>
+        <th>let</th>
+        <th>const</th>
+    </tr>
+    <tr>
+        <th>empty init</th>
+        <td>yes</td>
+        <td>yes</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <th>redeclare</th>
+        <td>yes</td>
+        <td>no</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <th>reassign</th>
+        <td>yes</td>
+        <td>yes</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <th>block scope-{}</th>
+        <td>no</td>
+        <td>yes</td>
+        <td>yes</td>
+    </tr>
+</table>
 
 ##### var - variable
 
-Var is not used today. Var is globally scoped.
+var is not in a use anymore. (old version). Var is globally scoped.
 
 ##### let - block scoped
 
-let is only recognized in it's block (inside the `{}`). Let can be reassigned
+let is only recognized in the block scope - `{}`. Let can be reassigned.
 
 ##### const - constant (קבוע)
 
-const is blocked scope, and cannot be changed (immutable) .
+const is blocked scope, cannot be changed (immutable), and must have value in initializion line.
 
-### Differences
+### with OOP
 
-<table border="1">
-<tr>
-    <th></th>
-    <th>let</th>
-    <th>var</th>
-    <th>const</th>
-</tr>
+Important note: we do not use const var and let with classes.
 
-<tr>
-    <th>redeclare</th>
-    <td>no</td>
-    <td>yes</td>
-    <td>no</td>
-</tr>
-
-<tr>
-    <th>reassign</th>
-    <td>yes</td>
-    <td>yes</td>
-    <td>no</td>
-</tr>
-
-<tr>
-    <th>block scope - {}</th>
-    <td>yes</td>
-    <td>no</td>
-    <td>yes</td>
-</tr>
-</table>
+- in class - we use only `private` and `public` .
