@@ -85,6 +85,9 @@
 * Error interface & sub classes: RangeError, TypeError etc..
 
 ### 12 lesson
-* Dstructuring
+* Destructuring
+* const var and let
 
 ### 13 lesson
+* Prepare for exam
+
