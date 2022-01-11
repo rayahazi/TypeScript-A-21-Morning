@@ -150,6 +150,8 @@ for (item in object) {
 
 5. For-of loop - goes on value
 
+we use for-of to print values, and we use regular for to assign values.
+
 ```ts
 for (item of object) {
   // action
@@ -343,14 +345,237 @@ console.log(h1.City);
 
 Allow class to contain object instances in other classes, so they can be used to preform actions related to that class.
 
-* Has - is the relationship
+- Has - is the relationship
 
 ```ts
-class CPU{}
+class CPU {}
 
-class Computer{
-    // property type CPU
-    public MyCpu:CPU;
+class Computer {
+  // property type CPU
+  public MyCpu: CPU;
+}
+```
+
+# 06 lesson - static
+
+Static properties and methods - are global in a class.
+
+#### regular variables
+
+- object level
+- Call using `this.VariableName`
+
+#### Static variables
+
+- class level
+- Call using `ClassName.VariableName`
+
+# 07 lesson - inheritance, override
+
+### inheritance - הורשה
+
+Inheritance is the ability to make base classes and sup-classes(similar to the real world relationships..)
+
+```ts
+class A {}
+class B extends A {}
+```
+
+- `IS` - the relationship
+- If there are properties in the constructor - we must call them also in sub-class. - use `super()` function, to redirect the properties of the parent-class to it
+
+```ts
+constructor(x:number, y:boolean){
+      super(x);
+      this.y = y;
+  }
+```
+
+### Override - דריסה
+
+When we have a function/property in parent class - we can override it, using the same name in sub-class.
+
+```ts
+class A {
+  public x = 5;
 }
 
+class B extends A {
+  public x = 8;
+}
+```
+
+# 08 lesson
+
+### readonly - משתנה לקריאה בלבד
+
+We can define a readonly property in 2 ways:
+
+- create private property, and add only get method.
+- use the keyword - readonly
+
+note: When we have static readonly property - it cannot be assigned through the constructor
+
+### Multylevel - הורשה מרובה
+
+- Multylevel inheritance works the same as a regular inheritance.
+
+```ts
+class A {}
+class B extends A {}
+class C extends B {}
+```
+
+### Overloading - העמסה
+
+It means - we can create more than 1 method with the same name in one class.
+
+The diffrence between the methods will be:
+
+1. Number of parameters
+2. Type of parameters
+
+In TypeScript - we do not have the ability to create more than 1 method with the same name.
+
+##### For overloading in TypeScript we will use `default/optional` parameters.
+
+```ts
+public func(x:number = 3, y?:number){}
+
+// Access:
+func();
+func(1);
+func(1, 2);
+func(undefined, 2);
+```
+
+### Enum
+
+Enum is a enumeration type - adds constants.
+
+```ts
+enum Color {
+  Black,
+  Green,
+}
+
+console.log(Color[0]); // Black
+console.log(Color.Green); // 1
+```
+
+# 09 lesson - abstract
+
+An abstract class - represents an idea/category.
+we cannot create objects from.
+
+```ts
+abstract class Fruit {}
+class Apple extends Fruit {}
+
+// let f1 = new fruit -> Error
+let a1 = new Apple(); // OK
+```
+
+# 10 lesson - interface - ממשק
+
+In the interface we define the contract - methods that must be implemented in each class that uses that interface.
+
+- Interface will start with `I`.
+
+- a class can implement as many interfaces as it needs, but can inherit only 1 class.
+
+```ts
+interface A {}
+interface B {}
+
+class myClass implements A, B {}
+```
+
+- We create in an interface only the function signature (we do not add a body)
+
+```ts
+interface IAction {
+  MoveLeft(steps: number): string;
+  MoveRight(steps: number): string;
+}
+```
+
+- We can create variables from interface type.
+
+```ts
+let myPaints: IPaint[] = new Array<IPaint>(10);
+```
+
+### Singleton - עיצוב תוכנה בסיסי
+
+- Singleton - allow a class to have only 1 instance.
+
+##### Create a singleton:
+
+1. private constructor
+2. 1 property that is an obejct of the class. (static, readonly).
+3. When we create objects - they will always go to the object we created.
+
+```ts
+class A {
+  private constructor() {}
+  public static instance: A = new A();
+}
+
+let a1 = A.instance;
+let a2 = A.instance;
+```
+
+# 11 lesson - Error handling
+
+try, catch, finally:
+
+```ts
+// here we can put the safe code. (will not ruin the program).
+try {
+  // here inside the try: we put the code that can make an error.
+} catch (error) {
+  // here inside the catch: if there is an error in the try block, the catch block will be executed.
+} finally {
+  // finally block will always run - whether there is an error or not.
+}
+// another code - will run after the try block, whether there is an error or not.
+```
+
+throw - we can use built-in error, or create an error for our conditions:
+
+- throw can get - string, number, boolean, new Error() etc..
+
+```ts
+throw "This is an error!";
+```
+
+- Instanceof keyword - return true if object belongs to a class:
+
+```ts
+console.log(obj_name instanceof class_name);
+```
+
+# 12 lesson
+
+- var - is the old way to define variables. Global scoped.
+- let - block scoped, can be reassigned.
+- const - block scoped, is a constant. and must have value in initializion line.
+
+#### In classes - we only use private & public. (not const/var/let).
+
+#### Destructuring - פירוק מבנה
+
+can work with arrays and objects.
+
+```ts
+[x, y, ...others] = [1, 2, 3, 4, 5];
+// x = 1, y = 2, others = 3,4,5
+
+({ x, y, ...others } = { x: 1, y: 2, z: 3, k: 4, m: 5 });
+
+let myFunc = () => {
+  return [true, false, true];
+};
+let [x1, x2, x3] = myFunc();
 ```
