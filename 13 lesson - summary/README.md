@@ -332,7 +332,7 @@ class House {
 
 let h1 = new House();
 h1.NumOfRooms = 6;
-// console.log(h1.NumOfRooms); -> Error: `undefined` -> write-only property.
+// console.log(h1.NumOfRooms); -> `undefined` - write-only property.
 
 // Cannot assign to 'City' because it is a read-only property.
 // h1.City = 'Jerusalem';
