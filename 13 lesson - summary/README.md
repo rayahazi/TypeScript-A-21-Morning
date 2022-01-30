@@ -191,8 +191,6 @@ myFunc2(45, 12); // 45, 12
 
 #### Default parameters
 
-We can have parameters in functions that aren't must.
-
 - We decalre default parameter using assignment `x:number = 5`.
 
 ```ts
